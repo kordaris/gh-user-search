@@ -2,4 +2,10 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p  Search more than #[strong 59M] users
+  div
+    form(action='/search',method='post')
+      div(data-role='none')
+          input(id='search', type='text',value='', placeholder='Search GitHub Users', name='search')
+      div(data-role='button')   
+        input(type='submit', value='Search', data-transition='fade', data-theme='c')
