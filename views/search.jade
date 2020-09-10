@@ -2,5 +2,8 @@ extends layout
 
 block content
   h1= title
-  p  Search results
-  p  #{JSON.stringify(users)}
+  if users.total_count > 0
+    each item in users.items
+      li= item.login
+  else
+    p No results found!
