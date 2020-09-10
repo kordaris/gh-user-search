@@ -6,7 +6,7 @@ block content
       .col-xs-12
         h1= title
     .row     
-      if users.total_count > 0
+      if users && users.total_count > 0
         div.col-12
           p #[strong #{users.total_count}] users
           each item in users.items
