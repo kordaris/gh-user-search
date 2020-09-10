@@ -8,7 +8,7 @@ router.post('/', async function(req, res, next) {
   const result = await getUsers(query);
   res.render('search', { 
     title: 'Search results', 
-    users: result.data
+    users: result
   });
 });
 
