@@ -4,9 +4,119 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #000;
+}
+
+a:hover {
+  transition: 0.5s;
+  color: #993b3b;
+  text-decoration: none;
+}
+
+h1 a {
+  color: #000;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* search-bar */
+.search-bar {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.search-bar p {
+  font-size: 1.2rem;
+}
+
+.search-form {
+  max-width: 500px;
+  margin: 50px auto;
+}
+
+.search-field {
+  float: left;
+  width: 70% !important;
+}
+
+.search-btn {
+  float: left;
+  width: 24%;
+  margin-left: 10px;
+  background-color: #414141;
+  color: #fff;
+  height: 36px;
+}
+
+.search-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* search results */
+
+
+.search-results {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-results p, .not-found {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.search-results img:hover {
+  transition: 0.5s;
+  opacity: 0.7;
+}
+
+.search-results .login {
+  padding: 16px;
+}
+
+.d-flex {
+  border-bottom: 1px solid #414141;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+/* pagination */
+
+.pagination {
+  max-width: 410px;
+  margin: 20px auto;
+  height: 32px;
 }
 
 .btn {
   font-weight: 600;
+}
+
+.btn-custom {
+  color: #000;
+  border-color: #000;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 37px;
+}
+
+.btn-custom:hover {
+  transition: 0.5s;
+  background-color: #414141;
+  color: #fff;
+}
+
+/* .fa.fa-angle-right.btn, .fa.fa-angle-left.btn {
+  line-height: 1;
+  padding: 0px 4px;
+  color: #414141;  
+} */
+
+.dots {
+  margin: 7px;
 }

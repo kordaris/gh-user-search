@@ -4,11 +4,11 @@ block content
   .container
     include search
     .row
-      .col-xs-12
-        h1= title
+      .col
+        h2= title
     .row     
-      if total_count > 0
-        .col-xs-12
+      .col.search-results
+        if total_count > 0
           p #[strong #{total_count}] users
           each item in users
             div.d-flex
@@ -18,7 +18,7 @@ block content
               div.p-2.flex-grow-1
                 a(href='#{item.html_url}')
                   div.login= item.login
-      else
-        p No users found!
+        else
+          p No users found!
 
     include pagination

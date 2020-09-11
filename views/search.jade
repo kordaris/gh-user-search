@@ -1,10 +1,9 @@
 .row
-  .col-xs-12
-    h1 GitHub User Search
+  .col.search-bar
+    h1 
+      a(href='/') GitHub User Search
     p  Search more than #[strong 59M] users
     div
-      form(action='/search',method='get')
-        div(data-role='none')
-          input(id='user', type='text',value='', placeholder='Search GitHub Users', name='user')
-        div(data-role='button')   
-          input(type='submit', value='Search', data-transition='fade', data-theme='c')
+      form(action='/search', method='get', class='search-form form-inline md-form mr-auto mb-4')
+        input(id='user', type='text',value='', placeholder='Search GitHub Users', name='user', class='search-field form-control mr-sm-2')
+        button(type='submit', value='Search', data-transition='fade', class='search-btn btn btn-elegant btn-rounded btn-sm my-0 waves-effect waves-light') Search
