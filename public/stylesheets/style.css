@@ -103,10 +103,10 @@ h2 {
   margin-left: 5px;
   margin-right: 5px;
   height: 37px;
+  transition: 0.5s;
 }
 
-.btn-custom:hover {
-  transition: 0.5s;
+.btn-custom:hover, .btn-custom.active {
   background-color: #414141;
   color: #fff;
 }

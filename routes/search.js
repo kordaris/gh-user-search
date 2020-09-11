@@ -24,15 +24,14 @@ router.get('/', async function(req, res, next) {
     // but there is a bug with the express-paginate mod and the wrong page url is returned
     const last_pages = paginate.getArrayPages(req)(2, page_count, last_page_count - 1);
 
-    console.log(JSON.stringify(page_count));
-
     res.render('search-results', { 
       title: 'Search results', 
       users: items,
       total_count,
       page_count,
       first_pages,
-      last_pages
+      last_pages,
+      page
     });
 
   } catch(e) {

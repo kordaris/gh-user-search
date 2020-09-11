@@ -8,11 +8,17 @@ if paginate.hasPreviousPages || paginate.hasNextPages(page_count)
               |  Previous
           if first_pages
             each first_page in first_pages
-              a.btn.btn-custom(href=first_page.url)=first_page.number
+              if first_page.number === page
+                a.btn.btn-custom.active(href=first_page.url)=first_page.number
+              else 
+                a.btn.btn-custom(href=first_page.url)=first_page.number
           if page_count > 3
             span.dots='...'
           if last_pages && page_count > 5
             each last_page in last_pages
+              if last_page.number === page
+                a.btn.btn-custom.active(href=last_page.url)=last_page.number
+              else 
               a.btn.btn-custom(href=last_page.url)=last_page.number
           if paginate.hasNextPages(page_count)
               a.btn.btn-custom(href=paginate.href()).next
