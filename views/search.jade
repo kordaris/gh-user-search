@@ -1,23 +1,10 @@
-extends layout
-
-block content
-  .container
-    .row
-      .col-xs-12
-        h1= title
-    .row     
-      if total_count > 0
-        div.col-12
-          p #[strong #{total_count}] users
-          each item in users
-            div.d-flex
-              div.p-2
-                a(href='#{item.html_url}')
-                  img(src="#{item.avatar_url}",width='50',height='50')
-              div.p-2.flex-grow-1
-                a(href='#{item.html_url}')
-                  div.login= item.login
-      else
-        p No users found!
-
-    include pagination
+.row
+  .col-xs-12
+    h1 GitHub User Search
+    p  Search more than #[strong 59M] users
+    div
+      form(action='/search',method='get')
+        div(data-role='none')
+          input(id='user', type='text',value='', placeholder='Search GitHub Users', name='user')
+        div(data-role='button')   
+          input(type='submit', value='Search', data-transition='fade', data-theme='c')

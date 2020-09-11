@@ -15,7 +15,7 @@ router.get('/', async function(req, res, next) {
     const total_count           = users && users.total_count || 0;
     const page_count            = Math.ceil(total_count / limit);
 
-    res.render('search', { 
+    res.render('search-results', { 
       title: 'Search results', 
       users: items,
       total_count,

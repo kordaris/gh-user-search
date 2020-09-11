@@ -5,13 +5,15 @@ if paginate.hasPreviousPages || paginate.hasNextPages(page_count)
         ul.pagination
           if paginate.hasPreviousPages
             a(href=paginate.href(true)).prev
-              i.fa.fa-angle-left
+              i.fa.fa-angle-left.btn
               |  Previous
           if pages
             each page in pages
               a.btn.btn-default(href=page.url)= page.number
+            if page_count > 3
+              span='...'
           if paginate.hasNextPages(page_count)
             li.next
               a(href=paginate.href()).next
                 | Next
-                i.fa.fa-angle-right
+                i.fa.fa-angle-right.btn

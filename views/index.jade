@@ -2,13 +2,4 @@ extends layout
 
 block content
   .container
-    .row
-      .col-xs-12
-        h1= title
-        p  Search more than #[strong 59M] users
-        div
-          form(action='/search',method='get')
-            div(data-role='none')
-                input(id='user', type='text',value='', placeholder='Search GitHub Users', name='user')
-            div(data-role='button')   
-              input(type='submit', value='Search', data-transition='fade', data-theme='c')
+    include search
