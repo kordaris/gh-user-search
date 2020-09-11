@@ -15,12 +15,24 @@ router.get('/', async function(req, res, next) {
     const total_count           = users && users.total_count || 0;
     const page_count            = Math.ceil(total_count / limit);
 
+    const first_pages = paginate.getArrayPages(req)(3, page_count, page);
+
+    // only the first 100 results are available from the api
+    const last_page_count = page_count > 100 ? 100 : page_count;
+    
+    // Here we are getting the last pages of pagination
+    // but there is a bug with the express-paginate mod and the wrong page url is returned
+    const last_pages = paginate.getArrayPages(req)(2, page_count, last_page_count - 1);
+
+    console.log(JSON.stringify(page_count));
+
     res.render('search-results', { 
       title: 'Search results', 
       users: items,
       total_count,
       page_count,
-      pages: paginate.getArrayPages(req)(3, page_count, page)
+      first_pages,
+      last_pages
     });
 
   } catch(e) {
