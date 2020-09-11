@@ -15,30 +15,34 @@ const octokit = new Octokit();
 //     auth: '123'
 // });
 
-const getUsers = async (q) => {
+const getUsers = async (q, page, per_page) => {
     try {
-        const search_res = await octokit.request('GET /search/users', { q });
+        const search_res = await octokit.request('GET /search/users', { 
+            q,
+            page,
+            per_page
+        });
 
         let users_searched = [];
-        // let users          = [];
         users_searched = search_res.data;
+        // let users          = [];
     
-        if (search_res.status === 200) {
-            // users_searched = search_res.data.items;
+        // if (search_res.status === 200) {
+        //     users_searched = search_res.data.items;
 
-            // if (users_searched.length) {
-            //     users_searched.forEach(async item => {
-            //         try {
-            //             let user = await octokit.request('GET /users/{username}', { 
-            //                 username: item.login 
-            //             });
-            //             // users.push(user);
-            //         } catch(e) {
-            //             console.error('error:', e);
-            //         }
-            //     });
-            // }
-        }
+        //     if (users_searched.length) {
+        //         users_searched.forEach(async item => {
+        //             try {
+        //                 let user = await octokit.request('GET /users/{username}', { 
+        //                     username: item.login 
+        //                 });
+        //                 // users.push(user);
+        //             } catch(e) {
+        //                 console.error('error:', e);
+        //             }
+        //         });
+        //     }
+        // }
     
         return users_searched;
 

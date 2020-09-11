@@ -6,10 +6,10 @@ block content
       .col-xs-12
         h1= title
     .row     
-      if users && users.total_count > 0
+      if total_count > 0
         div.col-12
-          p #[strong #{users.total_count}] users
-          each item in users.items
+          p #[strong #{total_count}] users
+          each item in users
             div.d-flex
               div.p-2
                 a(href='#{item.html_url}')
@@ -19,3 +19,5 @@ block content
                   div.login= item.login
       else
         p No users found!
+
+    include pagination

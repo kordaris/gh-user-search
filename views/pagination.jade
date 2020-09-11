@@ -1,0 +1,17 @@
+if paginate.hasPreviousPages || paginate.hasNextPages(page_count)
+  .row
+    .col-xs-12
+      nav(aria-label='navigation')
+        ul.pagination
+          if paginate.hasPreviousPages
+            a(href=paginate.href(true)).prev
+              i.fa.fa-angle-left
+              |  Previous
+          if pages
+            each page in pages
+              a.btn.btn-default(href=page.url)= page.number
+          if paginate.hasNextPages(page_count)
+            li.next
+              a(href=paginate.href()).next
+                | Next
+                i.fa.fa-angle-right
