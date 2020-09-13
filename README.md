@@ -12,7 +12,7 @@ Since I have experience working with Node.js from backend development mostly, I 
 
 * The [Github REST API](https://docs.github.com/en/rest) was used for the implementation and specifically, the search results were received via the [GET /search/users](https://docs.github.com/en/rest/reference/search#search-users) call. For retrieving more data about users (followers/following count, name etc) the [GET /users/{username}](https://docs.github.com/en/rest/reference/users#get-a-user) call was needed. 
 
-* For the utilization of GitHub's REST API, the [octokit](https://github.com/octokit/core.js#readme) library was used, as the documentation suggested.
+* For the utilization of GitHub's REST API and authentication, the [@octokit/core](https://github.com/octokit/core.js) and [@octokit/auth-token](https://github.com/octokit/auth-token.js) libraries were used.
 
 * The pages' count for pagination were limited to 100 as mentioned in the documentation [here](https://developer.github.com/v3/#pagination).
 
@@ -34,4 +34,4 @@ Since I have experience working with Node.js from backend development mostly, I 
 
 * More user data could be shown like description or star count, which would require a UI redesign and another REST API call because the star count is not included in the data returned from either of the calls used.
 
-* The UI could be improved in details
+* The UI could be improved in design and responsiveness.

@@ -74,15 +74,21 @@ h2 {
   opacity: 0.7;
 }
 
-.search-results .login {
-  padding: 16px;
-}
-
 .d-flex {
   border-bottom: 1px solid #414141;
   margin-top: 10px;
   margin-bottom: 10px;
   padding-bottom: 10px;
+}
+
+.d-flex-column.col-personal-info {
+  width: 58%;
+  padding-left: 10px;
+}
+
+.search-results .login {
+  font-weight: bold;
+  font-style: italic;
 }
 
 /* pagination */
