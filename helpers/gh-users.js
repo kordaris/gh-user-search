@@ -1,19 +1,8 @@
-const { Octokit }       = require("@octokit/core");
-// const { createAppAuth } = require("@octokit/auth-app");
+const { Octokit } = require("@octokit/core");
 
-// const auth = createAppAuth({
-//     id: 1,
-//     privateKey: "-----BEGIN PRIVATE KEY-----\n...",
-//     installationId: 1373100,
-//     clientId: "1234567890abcdef1234",
-//     clientSecret: "1234567890abcdef12341234567890abcdef1234",
-//   });
-
-const octokit = new Octokit();
-
-// const octokit = new Octokit({
-//     auth: '123'
-// });
+const octokit = new Octokit({
+    auth: '123' // PAT should not be public
+});
 
 const getUsers = async (q, page, per_page) => {
     try {
@@ -22,29 +11,36 @@ const getUsers = async (q, page, per_page) => {
             page,
             per_page
         });
+        
+        let users = {};
+        let user_items = [];
+        let items = search_res.data && search_res.data.items && search_res.data.items || [];
+        if (search_res.status === 200) {
+            if (items.length) {
+                for (var i = 0; i < items.length; i++) {
+                    try {
+                        let user = await octokit.request('GET /users/{username}', { 
+                            username: items[i].login 
+                        });
+                        
+                        if (user.status === 200 && user.data) {
+                            user_items.push(user.data);                            
+                        }
+                        
+                    } catch(e) {
+                        console.error('error:', e);
+                    }
+                };
+                
+                users = {
+                    total_count: search_res.data.total_count,
+                    items: user_items
+                }
 
-        let users_searched = [];
-        users_searched = search_res.data;
-        // let users          = [];
-    
-        // if (search_res.status === 200) {
-        //     users_searched = search_res.data.items;
+            }
+        }
 
-        //     if (users_searched.length) {
-        //         users_searched.forEach(async item => {
-        //             try {
-        //                 let user = await octokit.request('GET /users/{username}', { 
-        //                     username: item.login 
-        //                 });
-        //                 // users.push(user);
-        //             } catch(e) {
-        //                 console.error('error:', e);
-        //             }
-        //         });
-        //     }
-        // }
-    
-        return users_searched;
+        return users;
 
     } catch(e) {
         console.error('error:', e);

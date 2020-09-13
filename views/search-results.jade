@@ -10,14 +10,24 @@ block content
       .col.search-results
         if total_count > 0
           p #[strong #{total_count}] users
-          each item in users
+          each user in users
             div.d-flex
               div.p-2
-                a(href='#{item.html_url}')
-                  img(src="#{item.avatar_url}",width='50',height='50')
-              div.p-2.flex-grow-1
-                a(href='#{item.html_url}')
-                  div.login= item.login
+                a(href='#{user.html_url}')
+                  img(src="#{user.avatar_url}",width='50',height='50')
+              div.d-flex-column
+                div.p-2
+                  a(href='#{user.html_url}')
+                    div.name=user.name
+                div.p-2
+                  a(href='#{user.html_url}')
+                    div.login=user.login
+              if user.followers
+                div.p-2
+                    div.followers Followers: #{user.followers}
+              if user.following
+                div.p-2
+                    div.following Following: #{user.following}
         else
           p No users found!
 
