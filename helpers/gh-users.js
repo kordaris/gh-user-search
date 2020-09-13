@@ -9,6 +9,10 @@ const octokit = new Octokit({
 const getUsers = async (q, page, per_page) => {
     try {
 
+        if (!q) {
+            return { total_count: 0, items: [] };
+        }
+
         // This call returns the user search results
         const search_res = await octokit.request('GET /search/users', { 
             q,

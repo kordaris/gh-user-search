@@ -126,3 +126,27 @@ h2 {
 .dots {
   margin: 7px;
 }
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 24px
+  }
+
+  h2 {
+    font-size: 20px
+  }
+
+  .search-field, .search-btn {
+    font-size: 11px;
+  }
+
+  .btn-custom {
+    font-size: 12px;
+    height: 24px;
+    padding: 2px 7px
+  }
+
+  .search-results {
+    font-size: 12px;
+  }
+}
