@@ -141,9 +141,13 @@ h2 {
   }
 
   .btn-custom {
-    font-size: 12px;
-    height: 24px;
-    padding: 2px 7px
+    font-size: 11px;
+    height: 19px;
+    padding: 1px 4px;
+  }
+
+  .dots {
+    margin: 0;
   }
 
   .search-results {
