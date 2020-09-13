@@ -1,7 +1,7 @@
 const Octokit = require("@octokit/core").Octokit;
 
 const octokit = new Octokit({
-    auth: 'bb2a0c9f78e604e4650d82649a97dbc8f6b63098' // PAT should not be public
+    auth: '123' // PAT should not be public
 });
 
 const getUsers = async (q, page, per_page) => {
