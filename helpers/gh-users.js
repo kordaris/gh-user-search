@@ -1,11 +1,20 @@
 const Octokit = require("@octokit/core").Octokit;
+const { createAppAuth } = require("@octokit/auth-token");
 
+// const octokit = new Octokit({
+//     // auth: process.env.GHTOKEN, // PAT should not be public
+//     auth: 'bb2a0c9f78e604e4650d82649a97dbc8f6b63098', // PAT should not be public
+// });
 const octokit = new Octokit({
-    auth: process.env.GHTOKEN, // PAT should not be public
+    authStrategy: createAppAuth,
+    auth: process.env.GHTOKEN
 });
+
 
 const getUsers = async (q, page, per_page) => {
     try {
+        // const auth = await createAppAuth({ type: "oauth", code: process.env.GHTOKEN });
+
         const search_res = await octokit.request('GET /search/users', { 
             q,
             page,
