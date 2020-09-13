@@ -2,6 +2,7 @@
   "name": "gh-user-search",
   "version": "0.0.0",
   "private": true,
+  "main": "app.js",
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -14,5 +15,8 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
