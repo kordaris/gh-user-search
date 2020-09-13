@@ -1,7 +1,7 @@
 const Octokit = require("@octokit/core").Octokit;
 
 const octokit = new Octokit({
-    auth: '123' // PAT should not be public
+    auth: process.env.GHTOKEN, // PAT should not be public
 });
 
 const getUsers = async (q, page, per_page) => {
