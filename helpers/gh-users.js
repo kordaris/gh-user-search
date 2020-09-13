@@ -7,8 +7,8 @@ const { createAppAuth } = require("@octokit/auth-token");
 // });
 const octokit = new Octokit({
     authStrategy: createAppAuth,
-    // auth: process.env.GHTOKEN
-    auth: "bb2a0c9f78e604e4650d82649a97dbc8f6b63098"
+    auth: process.env.GHTOKEN
+    // auth: "bb2a0c9f78e604e4650d82649a97dbc8f6b63098"
 });
 
 
