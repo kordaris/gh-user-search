@@ -34,4 +34,4 @@ Since I have experience working with Node.js from backend development mostly, I 
 
 * More user data could be shown like description or star count, which would require a UI redesign and another REST API call because the star count is not included in the data returned from either of the calls used.
 
-* The UI could be improved in design and responsiveness.
+* The UI could be improved regarding design and responsiveness.
