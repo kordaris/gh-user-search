@@ -140,6 +140,10 @@ h2 {
     font-size: 11px;
   }
 
+  .search-btn {
+    height: 30px
+  }
+
   .btn-custom {
     font-size: 11px;
     height: 19px;
