@@ -1,4 +1,4 @@
-const { Octokit } = require("@octokit/core");
+const Octokit = require("@octokit/core").Octokit;
 
 const octokit = new Octokit({
     auth: '123' // PAT should not be public
