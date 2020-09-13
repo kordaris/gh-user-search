@@ -6,7 +6,6 @@ const octokit = new Octokit({
     auth: process.env.GHTOKEN
 });
 
-
 const getUsers = async (q, page, per_page) => {
     try {
 
